@@ -12,7 +12,6 @@ describe Player do
   end
 
   it "can be attacked" do
-    subject.attacked
-    expect(subject.hp).to eq 90
+    expect { subject.attacked }.to change { subject.hp }.by(-10)
   end
 end
