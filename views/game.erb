@@ -5,7 +5,30 @@
 </head>
 <body>
 	<h1><%= @player_1 %> vs. <%= @player_2 %></h1>
-	<div class="player"><em><%= @player_1 %></em> 100HP</div>
-	<div class="player"><em><%= @player_2 %></em> 100HP</div>
+	<div class="player">
+		<em><%= @player_1 %></em> 100HP
+		<form action="/attack" method="post">
+			<input type="text" name="target" value="<%= @player_2 %>" hidden>
+			<button type="submit" id="player1">Attack</button>
+		</form>
+	</div>
+
+	<div class="player">
+		<em><%= @player_2 %></em> 100HP
+		<form action="/attack" method="post">
+			<input type="text" name="target" value="<%= @player_1 %>" hidden>
+			<button type="submit"  id="player2" >Attack</button>
+		</form>
+	</div>
+
+	<div class="log">
+		<h3>Log</h3>
+		<ul>
+			<% @game_status.reverse.each do |state| %>
+			<li><%= state %></li>
+			<% end %>
+		</ul>
+		
+	</div>
 </body>
 </html>

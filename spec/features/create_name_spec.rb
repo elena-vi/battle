@@ -9,4 +9,9 @@ describe 'App' do
 		sign_in_and_play
 		expect(page).to have_content '100HP'
 	end
+	it 'attacks player and get\'s confirmation' do 
+		sign_in_and_play
+		click_button "player1"
+		expect(page).to have_content 'player2 got attacked'
+	end
 end
