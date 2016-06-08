@@ -9,9 +9,15 @@ describe 'App' do
 		sign_in_and_play
 		expect(page).to have_content '100HP'
 	end
-	it 'attacks player and get\'s confirmation' do 
+	it 'attacks player and get\'s confirmation' do
 		sign_in_and_play
 		click_button "player1"
-		expect(page).to have_content 'player2 got attacked'
+		expect(page).to have_content 'Lukasz got attacked'
 	end
+
+  it 'attacked player losses hp' do
+    sign_in_and_play
+    click_button "player1"
+    expect(page).to have_content 'Lukasz: 90HP'
+  end
 end
