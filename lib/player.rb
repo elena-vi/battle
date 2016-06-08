@@ -6,4 +6,8 @@ class Player
     @name = name
     @hp = 100
   end
+
+  def attacked
+    @hp -= 10
+  end
 end

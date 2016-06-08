@@ -6,7 +6,7 @@
 <body>
 	<h1><%= @player_1_name %> vs. <%= @player_2_name %></h1>
 	<div class="player">
-		<em><%= @player_1_name %></em> <%= @player_1_hp %>HP
+		<%= @player_1_name %>: <%= @player_1_hp %>HP
 		<form action="/attack" method="post">
 			<input type="text" name="target" value="<%= @player_2_name %>" hidden>
 			<button type="submit" id="player1">Attack</button>
@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="player">
-		<em><%= @player_2_name %></em> <%= @player_2_hp %>HP
+    <%= @player_2_name %>: <%= @player_2_hp %>HP
 		<form action="/attack" method="post">
 			<input type="text" name="target" value="<%= @player_1_name %>" hidden>
 			<button type="submit"  id="player2" >Attack</button>
