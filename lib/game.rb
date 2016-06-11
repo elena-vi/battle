@@ -11,9 +11,11 @@ class Game
 	end
 
 	def switch
-		if @current_player == @playe_r1
+		if @current_player == @player_1
+			@player_1.disable
 			@current_player = @player_2.enable
 		else
+			@player_2.disable
 			@current_player = @player_1.enable
 		end
 	end
